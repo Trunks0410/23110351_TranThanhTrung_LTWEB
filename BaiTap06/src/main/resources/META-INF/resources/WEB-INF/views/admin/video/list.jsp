@@ -3,40 +3,25 @@
 
 <html>
 <head>
-<title>Video List</title>
-<style>
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-th, td {
-	border: 1px solid black;
-	padding: 8px;
-	text-align: left;
-}
-
-th {
-	background-color: #f2f2f2;
-}
-</style>
+<title>Danh sách Video</title>
+<link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-	<h2>Video List</h2>
+	<h2>Danh sách Video</h2>
 	<p>${message}</p>
 	<form action="/admin/video/list" method="get">
 		<input type="text" name="keyword" value="${keyword}"
-			placeholder="Search by title" />
-		<button type="submit">Search</button>
+			placeholder="Tìm kiếm theo tiêu đề" />
+		<button type="submit">Tìm kiếm</button>
 	</form>
 	<table>
 		<tr>
 			<th>ID</th>
-			<th>Title</th>
+			<th>Tiêu đề</th>
 			<th>URL</th>
-			<th>Category</th>
-			<th>User</th>
-			<th>Actions</th>
+			<th>Danh mục</th>
+			<th>Người dùng</th>
+			<th>Hành động</th>
 		</tr>
 		<c:forEach var="video" items="${videos}">
 			<tr>
@@ -45,9 +30,10 @@ th {
 				<td>${video.url}</td>
 				<td>${video.category != null ? video.category.name : 'N/A'}</td>
 				<td>${video.user != null ? video.user.username : 'N/A'}</td>
-				<td><a href="/admin/video/form?id=${video.id}">Edit</a> <a
+				<td><a href="/admin/video/form?id=${video.id}">Sửa</a> <a
 					href="/admin/video/delete/${video.id}"
-					onclick="return confirm('Are you sure?')">Delete</a></td>
+					onclick="return confirm('Bạn có chắc chắn muốn xóa không?')">Xóa</a>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -57,6 +43,6 @@ th {
 		</c:forEach>
 	</c:if>
 	<br />
-	<a href="/admin/video/form">Add New Video</a>
+	<a href="/admin/video/form">Thêm Video mới</a>
 </body>
 </html>

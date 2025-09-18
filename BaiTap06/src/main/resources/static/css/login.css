@@ -1,0 +1,83 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #e9ebee; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.login-container {
+	background-color: #fff;
+	padding: 40px;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+	width: 380px; 
+	text-align: center;
+}
+
+h2 {
+	color: #1c1e21; 
+	margin-bottom: 25px; 
+	font-size: 28px;
+	font-weight: 600;
+}
+
+.form-group {
+	margin-bottom: 20px; 
+	text-align: left;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 8px; 
+	color: #606770;
+	font-weight: 500;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 12px; 
+	border: 1px solid #dddfe2;
+	border-radius: 6px; 
+	box-sizing: border-box;
+	font-size: 16px;
+	transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+	outline: none;
+	border-color: #007bff;
+	box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+	/* Thêm đổ bóng khi focus */
+}
+
+.login-button {
+	width: 100%;
+	padding: 14px; 
+	background-color: #1877f2; 
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 18px; 
+	font-weight: bold;
+	margin-top: 15px;
+	transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+	background-color: #166fe5;
+}
+
+.error-message {
+	color: #d9534f;
+	background-color: #fce4e4; 
+	border: 1px solid #f8d7da; 
+	padding: 12px;
+	border-radius: 6px;
+	margin-bottom: 20px;
+	font-size: 14px;
+	text-align: center;
+}

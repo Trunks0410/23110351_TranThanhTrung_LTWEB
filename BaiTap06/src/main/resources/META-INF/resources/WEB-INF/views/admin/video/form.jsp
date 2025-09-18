@@ -4,20 +4,16 @@
 
 <html>
 <head>
-<title>${videoModel.edit ? 'Edit Video' : 'Add New Video'}</title>
-<style>
-.error {
-	color: red;
-}
-</style>
+<title>${videoModel.edit ? 'Sửa Video' : 'Thêm Video Mới'}</title>
+<link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-	<h2>${videoModel.edit ? 'Edit Video' : 'Add New Video'}</h2>
+	<h2>${videoModel.edit ? 'Sửa Video' : 'Thêm Video Mới'}</h2>
 	<form:form action="/admin/video/save" method="post"
 		modelAttribute="videoModel">
 		<form:hidden path="id" />
 		<form:hidden path="edit" />
-		<label>Title:</label>
+		<label>Tiêu đề:</label>
 		<form:input path="title" />
 		<form:errors path="title" cssClass="error" />
 		<br />
@@ -25,20 +21,20 @@
 		<form:input path="url" />
 		<form:errors path="url" cssClass="error" />
 		<br />
-		<label>Category:</label>
+		<label>Danh mục:</label>
 		<form:select path="categoryId">
-			<form:option value="">Select Category</form:option>
+			<form:option value="">Chọn danh mục</form:option>
 			<form:options items="${categories}" itemValue="id" itemLabel="name" />
 		</form:select>
 		<br />
-		<label>User:</label>
+		<label>Người dùng:</label>
 		<form:select path="userId">
-			<form:option value="">Select User</form:option>
+			<form:option value="">Chọn người dùng</form:option>
 			<form:options items="${users}" itemValue="id" itemLabel="username" />
 		</form:select>
 		<br />
-		<button type="submit">${videoModel.edit ? 'Update' : 'Insert'}</button>
+		<button type="submit">${videoModel.edit ? 'Cập nhật' : 'Thêm'}</button>
 	</form:form>
-	<a href="/admin/video/list">Back to List</a>
+	<a href="/admin/video/list">Quay lại danh sách</a>
 </body>
 </html>

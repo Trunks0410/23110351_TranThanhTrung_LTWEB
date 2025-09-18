@@ -3,39 +3,24 @@
 
 <html>
 <head>
-<title>User List</title>
-<style>
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-th, td {
-	border: 1px solid black;
-	padding: 8px;
-	text-align: left;
-}
-
-th {
-	background-color: #f2f2f2;
-}
-</style>
+<title>Danh sách người dùng</title>
+<link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-	<h2>User List</h2>
+	<h2>Danh sách người dùng</h2>
 	<p>${message}</p>
 	<form action="/admin/user/list" method="get">
 		<input type="text" name="keyword" value="${keyword}"
-			placeholder="Search by username" />
-		<button type="submit">Search</button>
+			placeholder="Tìm kiếm theo tên người dùng" />
+		<button type="submit">Tìm kiếm</button>
 	</form>
 	<table>
 		<tr>
 			<th>ID</th>
-			<th>Username</th>
+			<th>Tên người dùng</th>
 			<th>Email</th>
-			<th>Role</th>
-			<th>Actions</th>
+			<th>Vai trò</th>
+			<th>Hành động</th>
 		</tr>
 		<c:forEach var="user" items="${users}">
 			<tr>
@@ -43,9 +28,9 @@ th {
 				<td>${user.username}</td>
 				<td>${user.email}</td>
 				<td>${user.role}</td>
-				<td><a href="/admin/user/form?id=${user.id}">Edit</a> <a
+				<td><a href="/admin/user/form?id=${user.id}">Sửa</a> <a
 					href="/admin/user/delete/${user.id}"
-					onclick="return confirm('Are you sure?')">Delete</a></td>
+					onclick="return confirm('Bạn có chắc chắn muốn xóa không?')">Xóa</a></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -55,6 +40,6 @@ th {
 		</c:forEach>
 	</c:if>
 	<br />
-	<a href="/admin/user/form">Add New User</a>
+	<a href="/admin/user/form">Thêm người dùng mới</a>
 </body>
 </html>

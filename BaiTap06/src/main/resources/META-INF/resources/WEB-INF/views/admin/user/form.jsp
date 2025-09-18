@@ -4,42 +4,38 @@
 
 <html>
 <head>
-<title>${userModel.edit ? 'Edit User' : 'Add New User'}</title>
-<style>
-.error {
-	color: red;
-}
-</style>
+<title>${userModel.edit ? 'Sửa người dùng' : 'Thêm người dùng mới'}</title>
+<link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-	<h2>${userModel.edit ? 'Edit User' : 'Add New User'}</h2>
+	<h2>${userModel.edit ? 'Sửa người dùng' : 'Thêm người dùng mới'}</h2>
 	<form:form action="/admin/user/save" method="post"
 		modelAttribute="userModel">
 		<form:hidden path="id" />
 		<form:hidden path="edit" />
-		<label>Username:</label>
+		<label>Tên người dùng:</label>
 		<form:input path="username" />
 		<form:errors path="username" cssClass="error" />
 		<br />
-		<label>Password:</label>
+		<label>Mật khẩu:</label>
 		<form:password path="password" />
 		<form:errors path="password" cssClass="error" />
 		<c:if test="${userModel.edit}">
-			<small>(Leave blank to keep current password)</small>
+			<small>(Để trống nếu không muốn thay đổi mật khẩu)</small>
 		</c:if>
 		<br />
 		<label>Email:</label>
 		<form:input path="email" />
 		<form:errors path="email" cssClass="error" />
 		<br />
-		<label>Role:</label>
+		<label>Vai trò:</label>
 		<form:select path="role">
 			<form:option value="ADMIN">ADMIN</form:option>
 			<form:option value="USER">USER</form:option>
 		</form:select>
 		<br />
-		<button type="submit">${userModel.edit ? 'Update' : 'Insert'}</button>
+		<button type="submit">${userModel.edit ? 'Cập nhật' : 'Thêm'}</button>
 	</form:form>
-	<a href="/admin/user/list">Back to List</a>
+	<a href="/admin/user/list">Quay lại danh sách</a>
 </body>
 </html>

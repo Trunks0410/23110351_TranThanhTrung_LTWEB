@@ -5,11 +5,12 @@
 <html>
 <head>
 <title>${categoryModel.edit ? 'Edit Category' : 'Add New Category'}</title>
+<link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
 	<h2>${categoryModel.edit ? 'Chỉnh sửa danh mục' : 'Thêm danh mục mới'}</h2>
 
-	<form:form action="/category/save" method="post"
+	<form:form action="/admin/category/save" method="post"
 		modelAttribute="categoryModel">
 		<form:hidden path="id" />
 		<form:hidden path="edit" />
